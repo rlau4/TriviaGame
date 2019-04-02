@@ -25,63 +25,63 @@ function checker() {
     var question7result3 = document.getElementById('question-7-result-3');
 
 
-    if(question1resutlt2.checked == true){
+    if (question1resutlt2.checked == true) {
         correct++;
-    
+
     }
-    if(question2result2.checked == true){
-        correct++;
-    }
-    if(question3result3.checked == true){
+    if (question2result2.checked == true) {
         correct++;
     }
-    if (question4result1.checked == true){
+    if (question3result3.checked == true) {
         correct++;
     }
-    if(question5result1.checked == true){
+    if (question4result1.checked == true) {
         correct++;
     }
-    if(question6result2.checked == true){
+    if (question5result1.checked == true) {
         correct++;
     }
-    if(question7result2.checked == true){
+    if (question6result2.checked == true) {
+        correct++;
+    }
+    if (question7result2.checked == true) {
         correct++;
     }
 
-    if (correct <= 4){
+
+    $("#result").html("You got " + correct + " out of 7 correct!")
+    stop()
+
+    if (correct <= 4) {
         $("#result").append("<div>", "You should study a little harder!", "<br>")
     }
-    else if( correct <= 6){
+    else if (correct <= 6) {
         $("#result").append("<div>", "You really know your stuff!", "<br>")
     }
-    else if( correct == 7) {
+    else if (correct == 7) {
         $("#result").append("<div>", "You're an MVP! You got them all correct!", "<br>")
     }
-    
-    
-$("#result").prepend("You got " + correct + " out of 7 correct!")
-stop()
 };
 
-setTimeout(checker, 1000* 100);
+setTimeout(checker, 1000 * 100);
 
 var number = 100;
 var intervalId;
 
-function run(){
+function run() {
     clearInterval(intervalId);
-    intervalId=setInterval(decrement, 1000);
+    intervalId = setInterval(decrement, 1000);
 }
 
 function decrement() {
-    number --;
-    $("#timer-div").html("<h2>"+ "You have "+ number +" seconds left!" + "</h2>" + "<br>"+ "<br>" );
+    number--;
+    $("#timer-div").html("<h2>" + "You have " + number + " seconds left!" + "</h2>" + "<br>" + "<br>");
     if (number === 0) {
         stop();
     }
 }
 
-function stop(){
+function stop() {
     clearInterval(intervalId);
     $("#timer-div").html("<h2>" + "Times Up!" + "</h2>")
 }
