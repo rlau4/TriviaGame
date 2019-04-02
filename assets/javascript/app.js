@@ -63,9 +63,9 @@ $("#result").prepend("You got " + correct + " out of 7 correct!")
 stop()
 };
 
-setTimeout(checker, 1000* 60);
+setTimeout(checker, 1000* 100);
 
-var number = 60;
+var number = 100;
 var intervalId;
 
 function run(){
